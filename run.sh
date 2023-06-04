@@ -1,1 +1,1 @@
-docker run -it --net=host --device /dev/i2c-1:/dev/i2c-1 --volume $(pwd)/ros_pca9685:/colcon_ws/src/ros_pca9685 ghcr.io/rosblox/ros-pca9685:humble
+docker run -it --net=host --device /dev/i2c-1:/dev/i2c-1 --volume $(pwd)/pca9685_ros2_control:/colcon_ws/src/pca9685_ros2_control ghcr.io/rosblox/ros-pca9685-ros2-control:humble
