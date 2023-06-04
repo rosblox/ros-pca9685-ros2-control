@@ -1,3 +1,0 @@
-[submodule "pca9685_ros2_control"]
-	path = pca9685_ros2_control
-	url = ./pca9685_ros2_control/
