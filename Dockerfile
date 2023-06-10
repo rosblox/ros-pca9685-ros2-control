@@ -24,4 +24,5 @@ WORKDIR /
 COPY ros_entrypoint.sh .
 
 RUN echo 'alias build="colcon build --cmake-args --symlink-install  --event-handlers console_direct+"' >> ~/.bashrc
-RUN echo 'alias run="ros2 launch pca9685_ros2_control_example example.launch.py"' >> ~/.bashrc
+RUN echo 'alias run_joint_group_velocity="ros2 launch pca9685_ros2_control_example joint_group_velocity_example.launch.py"' >> ~/.bashrc
+RUN echo 'alias run_diff_drive="ros2 launch pca9685_ros2_control_example diff_drive_example.launch.py"' >> ~/.bashrc
