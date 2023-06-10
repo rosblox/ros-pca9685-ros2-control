@@ -12,10 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-xacro \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /colcon_ws/src
-COPY pca9685_ros2_control pca9685_ros2_control
-
 WORKDIR /colcon_ws
+COPY pca9685_ros2_control src/pca9685_ros2_control
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --event-handlers console_direct+
 
