@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-hardware-interface \
     ros-humble-controller-manager \
     ros-humble-velocity-controllers \
+    ros-humble-diff-drive-controller \
     ros-humble-xacro \
     && rm -rf /var/lib/apt/lists/*
 
@@ -24,3 +25,4 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --event-
 RUN echo 'alias build="colcon build --symlink-install  --event-handlers console_direct+"' >> ~/.bashrc
 RUN echo 'alias run_joint_group_velocity="ros2 launch pca9685_ros2_control_example joint_group_velocity_example.launch.py"' >> ~/.bashrc
 RUN echo 'alias run_diff_drive="ros2 launch pca9685_ros2_control_example diff_drive_example.launch.py"' >> ~/.bashrc
+RUN echo 'alias run_mixed="ros2 launch pca9685_ros2_control_example mixed_example.launch.py"' >> ~/.bashrc
