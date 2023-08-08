@@ -1,3 +1,6 @@
 [submodule "pca9685_ros2_control"]
 	path = pca9685_ros2_control
 	url = git@github.com:rosblox/pca9685_ros2_control.git
+[submodule "ros2_controllers"]
+	path = ros2_controllers
+	url = git@github.com:rosblox/ros2_controllers.git

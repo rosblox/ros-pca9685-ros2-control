@@ -1,1 +1,1 @@
-docker build --build-arg ROS_DISTRO=humble -t ghcr.io/rosblox/ros-pca9685-ros2-control:humble .
+docker build --build-arg ROS_DISTRO=humble --progress=plain -t ghcr.io/rosblox/ros-pca9685-ros2-control:humble .
