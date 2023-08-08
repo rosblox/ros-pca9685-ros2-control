@@ -15,14 +15,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 
-WORKDIR /
-COPY ros_entrypoint.sh .
-
 WORKDIR /colcon_ws
 COPY pca9685_ros2_control src/pca9685_ros2_control
 COPY ros2_controllers/diff_drive_controller src/ros2_controllers/diff_drive_controller
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --event-handlers console_direct+
+
+COPY ros_entrypoint.sh ..
 
 RUN echo 'alias build="colcon build --symlink-install  --event-handlers console_direct+"' >> ~/.bashrc
 RUN echo 'source /colcon_ws/install/setup.bash; ros2 launch pca9685_ros2_control_example mixed_example.launch.py' >> /run.sh && chmod +x /run.sh
