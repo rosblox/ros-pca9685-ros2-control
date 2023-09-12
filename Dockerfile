@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-hardware-interface \
     ros-humble-controller-manager \
     ros-humble-velocity-controllers \
+    ros-humble-joint-state-broadcaster \
     ros-humble-xacro \
     ros-humble-tf2 \
     ros-humble-tf2-msgs \
