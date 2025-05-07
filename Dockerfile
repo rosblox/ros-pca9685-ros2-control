@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-velocity-controllers \
     ros-humble-joint-state-broadcaster \
     ros-humble-robot-state-publisher \
+    ros-humble-diff-drive-controller \
     ros-humble-xacro \
     ros-humble-tf2 \
     ros-humble-tf2-msgs \
@@ -20,7 +21,7 @@ COPY ros_entrypoint.sh .
 
 WORKDIR /colcon_ws
 COPY pca9685_ros2_control src/pca9685_ros2_control
-COPY ros2_controllers/diff_drive_controller src/ros2_controllers/diff_drive_controller
+# COPY ros2_controllers/diff_drive_controller src/ros2_controllers/diff_drive_controller
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --event-handlers console_direct+
 
