@@ -1,8 +1,12 @@
 #!/bin/bash
 
-docker run -it --device=/dev/i2c-1:/dev/i2c-1 \
+REPOSITORY_NAME="$(basename "$(dirname -- "$( readlink -f -- "$0"; )")")"
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+export HOST_UID=$(id -u)
+
+docker compose -f $SCRIPT_DIR/docker-compose.yml run \
 --volume $(pwd)/pca9685_ros2_control:/colcon_ws/src/pca9685_ros2_control \
 --volume $(pwd)/ros2_controllers/diff_drive_controller:/colcon_ws/src/ros2_controllers/diff_drive_controller \
---ipc=host --pid=host --network=host --env UID=$(id -u) --env GID=$(id -g) \
-ghcr.io/rosblox/ros-pca9685-ros2-control:humble 
-
+${REPOSITORY_NAME} bash

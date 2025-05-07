@@ -1,1 +1,7 @@
-docker build --build-arg ROS_DISTRO=humble --progress=plain -t ghcr.io/rosblox/ros-pca9685-ros2-control:humble .
+#!/bin/bash
+
+export BUILDKIT_PROGRESS=plain
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+docker compose -f $SCRIPT_DIR/docker-compose.yml build 
