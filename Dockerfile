@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libi2c-dev \
     python3-colcon-common-extensions \
     ros-humble-hardware-interface \
+    ros-humble-hardware-interface-testing \
     ros-humble-controller-manager \
     ros-humble-velocity-controllers \
     ros-humble-joint-state-broadcaster \
