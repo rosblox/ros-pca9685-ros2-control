@@ -6,15 +6,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libi2c-dev \
     python3-colcon-common-extensions \
-    ros-humble-hardware-interface \
-    ros-humble-hardware-interface-testing \
-    ros-humble-controller-manager \
-    ros-humble-velocity-controllers \
-    ros-humble-joint-state-broadcaster \
-    ros-humble-robot-state-publisher \
-    ros-humble-xacro \
-    ros-humble-tf2 \
-    ros-humble-tf2-msgs \
+    ros-${ROS_DISTRO}-hardware-interface \
+    ros-${ROS_DISTRO}-hardware-interface-testing \
+    ros-${ROS_DISTRO}-controller-manager \
+    ros-${ROS_DISTRO}-velocity-controllers \
+    ros-${ROS_DISTRO}-joint-state-broadcaster \
+    ros-${ROS_DISTRO}-robot-state-publisher \
+    ros-${ROS_DISTRO}-xacro \
+    ros-${ROS_DISTRO}-tf2 \
+    ros-${ROS_DISTRO}-tf2-msgs \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ros_entrypoint.sh .
